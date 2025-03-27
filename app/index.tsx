@@ -1,11 +1,13 @@
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 import { View } from '@/components/Themed';
+import Button from '@/components/ui/Button';
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Text> Lmoa</Text>
+      <Text style={styles.title}>Pillpal</Text>
+      <Button />
     </View>
   );
 }
