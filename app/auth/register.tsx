@@ -1,10 +1,11 @@
+import RegisterForm from "@/components/ui/RegisterForm";
 import colors from "@/styles/colors";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function register() {
   return (
     <View style={styles.container}>
-      <Text style={styles.textStyle}>Register</Text>
+      <RegisterForm />
     </View>
   )
 }
