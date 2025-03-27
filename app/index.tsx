@@ -4,12 +4,12 @@ import { View } from '@/components/Themed';
 import Button from '@/components/ui/Button';
 import colors from '@/styles/colors';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { Link, router } from 'expo-router';
+import { router } from 'expo-router';
 
 export default function TabOneScreen() {
   const submitHandler = () => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
-    router.push('/auth')
+    router.push('/auth/login')
   }
 
   return (
