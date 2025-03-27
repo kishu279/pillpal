@@ -44,8 +44,17 @@ function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack screenOptions={{ headerShown: false }} />
+    <ThemeProvider value={DarkTheme}>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          animation: 'fade_from_bottom' // Apply fade animation globally
+        }}
+      >
+        <Stack.Screen
+          name="root"
+        />
+      </Stack>
     </ThemeProvider>
   );
 }
