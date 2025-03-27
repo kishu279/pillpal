@@ -5,8 +5,8 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-
-import { useColorScheme } from '@/components/useColorScheme';
+import { PaperProvider } from 'react-native-paper';
+import { theme } from '@/styles/theme';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -41,20 +41,24 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  const colorScheme = useColorScheme();
 
   return (
     <ThemeProvider value={DarkTheme}>
-      <Stack
-        screenOptions={{
-          headerShown: false,
-          animation: 'fade_from_bottom' // Apply fade animation globally
-        }}
-      >
-        <Stack.Screen
-          name="root"
-        />
-      </Stack>
+      <PaperProvider theme={theme}>
+        <Stack
+          screenOptions={{
+            headerShown: false,
+            animation: 'fade_from_bottom' // Apply fade animation globally
+          }}
+        >
+          <Stack.Screen
+            name="index"
+          />
+          <Stack.Screen
+            name="auth/login"
+          />
+        </Stack>
+      </PaperProvider>
     </ThemeProvider>
   );
 }
